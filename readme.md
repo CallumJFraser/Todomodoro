@@ -1,7 +1,7 @@
 Todomodoro
 ===
 
-Todo list with integrated tomodoro timer
+Todo list client side react web application with pomodoro timer capabilities.
 
 This application uses the following:
 
