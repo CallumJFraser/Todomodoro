@@ -1,7 +1,7 @@
 Todomodoro
 ===
 
-Todo list client side react web application with pomodoro timer capabilities.
+Todo list client side react web application with pomodoro timer capabilities. This app is an extension of the [Simple Flux Todo](https://github.com/CallumJFraser/SimpleFluxTodo) project.
 
 This application uses the following:
 
