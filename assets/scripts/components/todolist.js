@@ -1,3 +1,4 @@
+const React = require('react');
 const Dispatcher = require('../dispatcher');
 const TodoStore = require('../stores/todo');
 

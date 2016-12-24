@@ -1,5 +1,5 @@
 require('chai').should();
-const dispatcher = require('../../../assets/app/dispatcher');
+const dispatcher = require('../../../assets/scripts/dispatcher');
 
 describe('dispatcher', function () {
     it('should export setupObserver interface', function () {

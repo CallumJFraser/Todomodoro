@@ -1,3 +1,5 @@
+const React = require('react');
+
 require("../styles/stylesheet.css");
 const TodoList = require('./components/todolist');
 const PomodoroTimer = require('./components/pomodorotimer.js');

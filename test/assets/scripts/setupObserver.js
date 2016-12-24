@@ -1,5 +1,5 @@
 require('chai').should();
-const setupObserver = require('../../../assets/app/setupObserver');
+const setupObserver = require('../../../assets/scripts/setupObserver');
 
 describe('setupObserver', function () {
     it('should add subscribe and unsubscribe function to passed object', function () {

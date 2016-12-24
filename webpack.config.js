@@ -1,6 +1,6 @@
 module.exports = {
-    context: __dirname + '/assets',
-    entry: './app/index',
+    context: __dirname + '',
+    entry: './assets/scripts/index',
     output: {
         path: __dirname + '/build',
         filename: "index.bundle.js"
