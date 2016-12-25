@@ -10,7 +10,10 @@ This application uses the following:
     * [Babel](https://babeljs.io/) - Transpiles ES6 JS code into the more compatible ES5 standard.
 * Client-side
     * [Bootstrap](https://getbootstrap.com/) - CSS grid and basic application styles
-
+* Testing
+	* [Mocha](https://mochajs.org/) - Test framework
+	* [Chai](http://chaijs.com/) - Assertion framework
+	* [Karma](https://karma-runner.github.io) - Client side test runner
 
 Any feedback or improvements please give me a yell.
 
