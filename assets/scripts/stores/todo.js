@@ -1,13 +1,15 @@
 const Dispatcher = require('../dispatcher');
 const setupObserver = require('../setupObserver');
+const _localStorage = require('../utils/localStorage');
+
 const localStorageName = 'todos';
 const todoStore = {};
 const publish = setupObserver(todoStore);
 
 //  Store handles storage and updates components that care about its events
 var _todos = [{id: 1, text: 'Try Me'}];
-if (localStorage && localStorage[localStorageName]) {
-    _todos = JSON.parse(localStorage[localStorageName]);
+if (_localStorage && _localStorage[localStorageName]) {
+    _todos = JSON.parse(_localStorage[localStorageName]);
 }
 
 const create = todo => {
@@ -45,7 +47,7 @@ const _dispatchId = Dispatcher.subscribe(payload => {
             update(payload.data);
             break;
     }
-    localStorage.setItem(localStorageName, JSON.stringify(_todos));
+    _localStorage.setItem(localStorageName, JSON.stringify(_todos));
     publish({
         action: 'UPDATE'
     });
