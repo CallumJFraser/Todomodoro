@@ -35,7 +35,7 @@ const update = todo => {
     });
 };
 
-const _dispatchId = Dispatcher.subscribe(payload => {
+const handleDispatch = payload => {
     switch(payload.action) {
         case 'TODO_CREATE':
             create(payload.data);
@@ -51,7 +51,9 @@ const _dispatchId = Dispatcher.subscribe(payload => {
     publish({
         action: 'UPDATE'
     });
-});
+};
+
+const dispatchId = Dispatcher.subscribe(handleDispatch);
 
 todoStore.getTodos = () => {
     return _todos;
