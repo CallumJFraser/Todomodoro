@@ -1,5 +1,4 @@
 require('chai').should();
-// const rewire = require('babel-plugin-rewire');
 const todoStore = require('../../../../assets/scripts/stores/todo');
 
 describe('Todo store', function () {
