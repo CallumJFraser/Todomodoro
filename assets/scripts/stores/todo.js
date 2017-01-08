@@ -13,10 +13,10 @@ if (_localStorage && _localStorage[localStorageName]) {
 }
 
 const create = todo => {
-    const todoItem = Object.assign({}, todo, {
+    const todoItem = Object.assign({
         id: new Date(),
         text: 'A new item'
-    });
+    }, todo);
     _todos.push(todoItem);
 };
 
