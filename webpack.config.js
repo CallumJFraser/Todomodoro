@@ -1,5 +1,5 @@
 module.exports = {
-    context: __dirname + '',
+    context: __dirname,
     entry: './assets/scripts/index',
     output: {
         path: __dirname + '/build',
