@@ -15,6 +15,6 @@ describe('TodoList', function () {
 		const todoList = renderComponent();
 
 		const title = todoList.querySelectorAll('h2')[0];
-		title[0].textContent.should.equal('Todos');
+		title.textContent.should.equal('Todos');
 	});
 });
