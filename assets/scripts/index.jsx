@@ -2,8 +2,8 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 
 require("../styles/stylesheet.css");
-const TodoList = require('./components/todoList');
-const PomodoroTimer = require('./components/pomodoroTimer.js');
+const TodoList = require('./components/todoList.jsx');
+const PomodoroTimer = require('./components/pomodoroTimer.jsx');
 
 const Index = React.createClass({
     render: function IndexRender () {

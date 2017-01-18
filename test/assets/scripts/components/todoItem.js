@@ -3,7 +3,7 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const TestUtils = require('react-addons-test-utils');
 
-const TodoItem = require('../../../../assets/scripts/components/todoItem');
+const TodoItem = require('../../../../assets/scripts/components/todoItem.jsx');
 
 describe('TodoItem', function () {
 	const testItem = {

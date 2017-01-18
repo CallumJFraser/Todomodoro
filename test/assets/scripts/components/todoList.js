@@ -3,7 +3,7 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const TestUtils = require('react-addons-test-utils');
 
-const TodoList = require('../../../../assets/scripts/components/todoList');
+const TodoList = require('../../../../assets/scripts/components/todoList.jsx');
 
 describe('TodoList', function () {
 	const renderComponent = function () {
