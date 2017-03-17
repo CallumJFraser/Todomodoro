@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import '../styles/stylesheet.css';
 import TodoList from './components/todoList.jsx';
@@ -8,14 +9,21 @@ import PomodoroTimer from './components/pomodoroTimer.jsx';
 const Index = React.createClass({
     render: function IndexRender () {
         return (
-            <div className="row">
+            <div className="row col-xs-12">
                 <h1>Todomodoro</h1>
-                <div className="col-sm-8">
-                    <TodoList />
-                </div>
-                <div className="col-sm-4">
-                    <PomodoroTimer />
-                </div>
+                <Tabs>
+                    <TabList>
+                        <Tab>Todos</Tab>
+                        <Tab>Pomodoro</Tab>
+                    </TabList>
+
+                    <TabPanel>
+                        <TodoList />
+                    </TabPanel>
+                    <TabPanel>
+                        <PomodoroTimer />
+                    </TabPanel>
+                </Tabs>
             </div>
         );
     }
