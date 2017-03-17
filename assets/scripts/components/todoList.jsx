@@ -1,17 +1,17 @@
-const React = require('react');
-const Dispatcher = require('../dispatcher');
-const TodoStore = require('../stores/todo');
+import React from 'react';
 
-const TodoItem = require('./todoItem.jsx');
+import Dispatcher from '../dispatcher';
+import TodoStore from '../stores/todo';
+import TodoItem from './todoItem.jsx';
 
-module.exports = React.createClass({
+export default React.createClass({
     getInitialState: () => {
         return {
             items: TodoStore.getTodos()
         };
     },
     componentDidMount: function () {
-        var taskId = TodoStore.subscribe(payload => {
+        let taskId = TodoStore.subscribe(payload => {
             if (payload.action === 'UPDATE') {
                 this._onChange();
             }
@@ -35,12 +35,12 @@ module.exports = React.createClass({
         });
     },
     render: function TodoListRender () {
-        var todos = [];
+        let todos = [];
         this.state.items.forEach(function (item) {
             todos.push(<TodoItem key={item.id} item={item} />)
         });
         return (
-            <section className="col-sm-8">
+            <section>
                 <h2>Todos</h2>
                 <ul>
                     {todos}

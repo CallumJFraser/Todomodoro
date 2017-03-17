@@ -1,5 +1,5 @@
-module.exports = function (observer) {
-    var _callbacks = [];
+export default observer => {
+    let _callbacks = [];
 
     observer.subscribe = callback => {
         const callbackId = _callbacks.length;
@@ -11,8 +11,8 @@ module.exports = function (observer) {
         _callbacks.splice(callbackId, 1);
     };
 
-    return function publish (payload) {
-        _callbacks.forEach(function (callback) {
+    return payload => {
+        _callbacks.forEach(callback => {
             if (typeof callback === 'function') {
                 callback(payload);
             }

@@ -1,9 +1,11 @@
-require('chai').should();
-const React = require('react');
-const ReactDOM = require('react-dom');
-const TestUtils = require('react-addons-test-utils');
+import chai from 'chai';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import TestUtils from 'react-addons-test-utils';
 
-const TodoList = require('../../../../assets/scripts/components/todoList.jsx');
+import TodoList from '../../../../assets/scripts/components/todoList.jsx';
+
+chai.should();
 
 describe('TodoList', function () {
 	const renderComponent = function () {

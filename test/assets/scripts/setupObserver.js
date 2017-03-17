@@ -1,5 +1,7 @@
-require('chai').should();
-const setupObserver = require('../../../assets/scripts/setupObserver');
+import chai from 'chai';
+import setupObserver from '../../../assets/scripts/setupObserver';
+
+chai.should();
 
 describe('setupObserver', function () {
     it('should add subscribe and unsubscribe function to passed object', function () {

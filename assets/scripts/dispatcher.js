@@ -1,4 +1,4 @@
-const setupObserver = require('./setupObserver');
+import setupObserver from './setupObserver';
 
 const dispatcher = {};
 const publish = setupObserver(dispatcher)

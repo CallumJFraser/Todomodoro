@@ -1,9 +1,11 @@
-require('chai').should();
-const React = require('react');
-const ReactDOM = require('react-dom');
-const TestUtils = require('react-addons-test-utils');
+import chai from 'chai';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import TestUtils from 'react-addons-test-utils';
 
-const TodoItem = require('../../../../assets/scripts/components/todoItem.jsx');
+import TodoItem from '../../../../assets/scripts/components/todoItem.jsx';
+
+chai.should();
 
 describe('TodoItem', function () {
 	const testItem = {

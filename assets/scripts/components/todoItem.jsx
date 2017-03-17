@@ -1,9 +1,10 @@
-const React = require('react');
-const Dispatcher = require('../dispatcher');
+import React from 'react';
 
-module.exports = React.createClass({
+import Dispatcher from '../dispatcher';
+
+export default React.createClass({
     _onChange: function (event) {
-        var eventData = {
+        let eventData = {
             id: this.props.item.id,
             text: event.target.value
         };

@@ -11,8 +11,7 @@ module.exports = {
             loader: 'babel-loader',
             exclude: /node_modules/,
             query: {
-                presets: ['es2015','react'],
-                plugins: ['rewire']
+                presets: ['es2015','react']
             }
         }, {
             test: /\.css$/,

@@ -1,23 +1,33 @@
-require('chai').should();
-const todoStore = require('../../../../assets/scripts/stores/todo');
+import chai from 'chai';
+import todoStore from '../../../../assets/scripts/stores/todo';
 
-describe('Todo store', function () {
+chai.should();
+
+describe('Todo store', () => {
 	const createAction = 'TODO_CREATE';
 	const removeAction = 'TODO_REMOVE';
 	const updateAction = 'TODO_UPDATE';
-	const setTodos = todoStore.__get__('setTodos');
+	const setTodos = items => {
+		localStorage.setItem('Todomodoro-TodoItems', JSON.stringify(items));
+	};
 
-	beforeEach(function () {
-		setTodos([]);
+	beforeEach(() => {
+		localStorage.clear();
 	});
 
-	it('should return current list of todos',function () {
+	it('should return default item if localStorage empty', () => {
+		let todos = todoStore.getTodos();
+		todos[0].id.should.equal(1);
+		todos[0].text.should.equal('Try Me');
+	});
+
+	it('should return current items from localStorage', () => {
 		setTodos([{
 			id: 12345,
 			text: '0one2three4five6seven8nine'
 		}]);
 
-		var todos = todoStore.getTodos();
+		let todos = todoStore.getTodos();
 		todos[0].id.should.equal(12345);
 		todos[0].text.should.equal('0one2three4five6seven8nine');
 
@@ -31,10 +41,10 @@ describe('Todo store', function () {
 		todos[0].text.should.equal('9eight7six5four3two1zero');
 	});
 
-	it('should handle todo create action', function () {
-		const handleDispatch = todoStore.__get__('handleDispatch');
+	it('should handle todo create action',  () => {
+		setTodos([]);
 
-		handleDispatch({
+		todoStore.handleDispatch({
 			action: createAction,
 			data: {
 				text: 'testing this shizzle'
@@ -45,14 +55,13 @@ describe('Todo store', function () {
 		todos[0].text.should.equal('testing this shizzle');
 	});
 
-	it('should handle todo remove action', function () {
-		const handleDispatch = todoStore.__get__('handleDispatch');
+	it('should handle todo remove action',  () => {
 		setTodos([{
 			id:1,
 			text: 'this is a test'
 		}]);
 
-		handleDispatch({
+		todoStore.handleDispatch({
 			action: removeAction,
 			data: 1
 		});
@@ -61,14 +70,13 @@ describe('Todo store', function () {
 		todos.length.should.equal(0);
 	});
 
-	it('should handle todo update action', function () {
-		const handleDispatch = todoStore.__get__('handleDispatch');
+	it('should handle todo update action',  () => {
 		setTodos([{
 			id:1,
 			text: 'this is a test'
 		}]);
 
-		handleDispatch({
+		todoStore.handleDispatch({
 			action: updateAction,
 			data: {
 				id: 1,

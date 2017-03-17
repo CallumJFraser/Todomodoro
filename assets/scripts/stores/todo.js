@@ -1,7 +1,7 @@
-const Dispatcher = require('../dispatcher');
-const setupObserver = require('../setupObserver');
+import Dispatcher from '../dispatcher';
+import setupObserver from '../setupObserver';
 
-const localStorageName = 'todos';
+const localStorageName = 'Todomodoro-TodoItems';
 const todoStore = {};
 const publish = setupObserver(todoStore);
 
@@ -17,7 +17,7 @@ const setTodos = (todoList) => {
 };
 
 const create = todo => {
-    var _todos = getTodos();
+    let _todos = getTodos();
     const todoItem = Object.assign({
         id: new Date(),
         text: 'A new item'
@@ -28,7 +28,7 @@ const create = todo => {
 };
 
 const remove = id => {
-    var _todos = getTodos();
+    let _todos = getTodos();
     _todos = _todos.filter(item => {
         return item.id !== id;
     });
@@ -37,7 +37,7 @@ const remove = id => {
 };
 
 const update = todo => {
-    var _todos = getTodos();
+    let _todos = getTodos();
     _todos = _todos.map(item => {
         if (item.id === todo.id) {
             return todo;
@@ -48,7 +48,7 @@ const update = todo => {
     setTodos(_todos);
 };
 
-const handleDispatch = payload => {
+todoStore.handleDispatch = payload => {
     switch(payload.action) {
         case 'TODO_CREATE':
             create(payload.data);
@@ -65,7 +65,7 @@ const handleDispatch = payload => {
     });
 };
 
-const dispatchId = Dispatcher.subscribe(handleDispatch);
+const dispatchId = Dispatcher.subscribe(todoStore.handleDispatch);
 
 todoStore.getTodos = getTodos;
 
@@ -73,4 +73,4 @@ todoStore.unload = function () {
     Dispatcher.unsubscribe(dispatchId);
 };
 
-module.exports = todoStore;
+export default todoStore;

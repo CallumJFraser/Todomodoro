@@ -1,9 +1,9 @@
-const React = require('react');
+import React from 'react';
 
-module.exports = React.createClass({
+export default React.createClass({
     render: function pomodoroTimerRender() {
         return (
-            <section className="col-sm-4">
+            <section>
                 <h2>Timer</h2>
             </section>
         );

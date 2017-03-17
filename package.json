@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "watcher": "webpack-dev-server --hot",
+    "watcher": "webpack-dev-server --inline",
     "test": "./node_modules/karma/bin/karma start ./karma.conf.js"
   },
   "keywords": [],
@@ -32,5 +32,8 @@
     "style-loader": "^0.13.1",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "react-tabs": "^0.8.2"
   }
 }
